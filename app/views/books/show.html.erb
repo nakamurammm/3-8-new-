@@ -1,8 +1,15 @@
-<h2>Title:　<%= @book.title %></h2>
+ <% if flash[:notice] %>
+   <p id="notice">
+    <font color="green">
+       <%= flash[:notice] %>
+    </font>
+   </p>
+   <% end %>
+<p>Title: <%= @book.title %></p>
 
 
+<p>Body:　<%= @book.body %></p>
 
-<h2>Body:　<%= @book.body %></h2>
-
-<p><%= link_to "Edit", edit_book_path(@book.id) %></p>
-<p><%= link_to "destroy", book_path(@book.id), method: :delete %></p>
+<a><%= link_to "Edit", edit_book_path(@book.id) %></a>
+|
+<a href=/books>back</a>
